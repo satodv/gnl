@@ -85,7 +85,7 @@ char	*get_next_line(int fd)
 	static char	*content[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1024)
 		return (NULL);
 	content[fd] = get_content(content[fd], fd);
 	if (!content[fd])
